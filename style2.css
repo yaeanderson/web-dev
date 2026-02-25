@@ -1,0 +1,31 @@
+p {color:lightblue;}
+    
+a:hover {color:#fdfd96;}
+    
+a,li {color:lightgreen;}
+    
+ul li {font-style:italic;}
+
+h2, h3, ol li {color:lightpink}
+
+ul li, ol ol li {color:lightgreen}
+
+ol li{color:lightpin}
+    
+.int-link {font-weight:bolder; }
+    
+#LCSMT {
+  Font-size:.9cm; 
+  color:#c3b1e1;
+}
+    
+h1 {color:#c3b1e1}
+
+ 
+#LCSMT:hover {color:#fdfd96}
+ /*beep boop*/
+body {
+  font-family:Rubik Marker Hatch,cursive; 
+  background-color:black;
+  text-align:Left;
+}
