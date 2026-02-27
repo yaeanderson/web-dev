@@ -1,0 +1,53 @@
+body {
+  Margin:0px;
+  font-family:'Rubik Marker Hatch',cursive; 
+  background-color:#E0E0E0;
+  color:white;
+}
+h1, h2 {
+  font-family: 'Limelight', cusrive;
+  color:#FF0000;
+}
+h1, #RTH {
+  font-size:2rem;
+  margin-left:50px;
+  color:#FF0000
+}
+h2, .Kermits {
+  font-size:125%;
+  color:#FF0000
+}
+p {
+  color:#0000FF;
+}
+div.review-div {
+  background-color:#FFFDD0;
+  margin-left:75px;
+  margin-right:75px;
+  border: solid Black 10px;
+  border-radius: 30px;
+  padding:15px;
+}
+#method {
+  margin-left:50px;
+  margin-right:50px;
+  color:#0000FF;
+}
+
+hr {
+  border-color:Black;
+  margin-left:75px;
+  margin-right:75px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+.Link2pen {
+  font-size:.75em;
+  color:#FF0000
+}
+a.Link2pen:hover {
+  color:#000000;
+}
+#RTH:hover {
+  color:#000000;
+}
