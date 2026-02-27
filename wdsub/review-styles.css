@@ -51,3 +51,6 @@ a.Link2pen:hover {
 #RTH:hover {
   color:#000000;
 }
+a {
+  target:_blank;
+}
