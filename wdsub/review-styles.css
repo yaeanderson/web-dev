@@ -54,3 +54,9 @@ a.Link2pen:hover {
 a {
   target:_blank;
 }
+a:visited {
+  color:#000000;
+}
+.Kermits {
+  font-family: 'Limelight', cusrive;
+}
