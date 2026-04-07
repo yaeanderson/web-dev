@@ -1,10 +1,7 @@
 body{
-  marigin:auto;
+  marigin: 0px;
   background-color:rgba(0,0,0,.6);
   font-family:Rubik Marker Hatch,cursive; 
-}
-#margin {
-  margin: auto;
 }
 #bg-image {
   position:fixed;
