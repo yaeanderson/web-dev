@@ -5,7 +5,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
-    <script src="https://yaeanderson.github.io/web-dev/wdsub/globalheader.js"></script>
+    <script src="https://yaeanderson.github.io/web-dev/wdsub/globalheader.js">let elem = document.createElement("div");
+elem.innerHTML = "<link rel='stylesheet' href='https://yaeanderson.github.io/web-dev/globalheader.css'>"
+document.body.prepend(elem);
+
+fetch("https://yaeanderson.github.io/web-dev/globalheader.html")
+  .then((output) => output.text())
+  .then((text) => {elem.innerHTML = elem.innerHTML + text;})
+  .catch((e) => console.error(e));</script>
     <link rel="stylesheet" href="https://yaeanderson.github.io/web-dev/video-games/vg-styles.css">
   </head>
   <body>
