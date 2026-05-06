@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Maker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Honk:MORF@15&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://yaeanderson.github.io/web-dev/wdsub/listmaker.css">
+  </head>
+  <body>
+    <script src="https://yaeanderson.github.io/web-dev/wdsub/listmaker.js"></script>
+    <img src="https://cdn.stocksnap.io/img-thumbs/960w/notebook-desk_GRGCZJ7CNE.jpg" id="bg-image">
+    <div id="page">
+      <div id="header"><h1>List Maker</h1></div>
+      <div id="body">
+        <div id="input-item">
+          <lable for="input" id="label">New Item:</lable>
+          <input type="text" id="input"></input>
+          <button id="new-item" onclick="addItem(event)">Add Item</button>
+          <button id="no-more-item" onclick="clearList(event)">Clear List</button>
+        </div>
+        <div id="list-items">
+          <ul id="list">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="https://yaeanderson.github.io/web-dev/wdsub/listmaker.js"></script>
+
+  </body>
+</html>
