@@ -38,7 +38,7 @@ function deleteItem(elem) {
  elem.parentElement.remove();
 }
 function checkItem(elem) {
-  elem.parentElement.style.textDecoration = "solid color:#212a8b line-through 50px";
+  elem.parentElement.style.textDecoration = "solid color:#212a8b line-through .5em";
 }
 
 
