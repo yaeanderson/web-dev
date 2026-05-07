@@ -8,7 +8,6 @@ let list = document.getElementById("list");
 loadList();
 noMoreItems.addEventListener("click", () => clearList());
 moreItems.addEventListener("click", () => addItem());
-document.addEventListener("beforeunload", () => saveList()):
 document.addEventListener("keydown", (key) => {
   if (key.code == "Enter") addItem(key);
 });
@@ -42,12 +41,3 @@ function deleteItem(elem) {
 function checkItem(elem) {
   elem.parentElement.style.textDecoration = "solid black line-through 0.1em";
 }
-function saveList() {
-  document.cookie = "list=" + list.innerHTML;
-}
-function loadList() {
-  let oldList = document.cookie.substring(5);
-  if (oldList != "") list.innerHTML = oldList;
-}
-
-
