@@ -5,9 +5,8 @@ let itemInput = document.getElementById("input");
 let moreItems = document.getElementById("new-item");
 let noMoreItems = document.getElementById("no-more-item");
 let list = document.getElementById("list");
-loadList();
 noMoreItems.addEventListener("click", () => clearList());
-moreItems.addEventListener("click", () => addItem());
+moreItems.addEventListener("click", () => addItem(event));
 document.addEventListener("keydown", (key) => {
   if (key.code == "Enter") addItem(key);
 });
