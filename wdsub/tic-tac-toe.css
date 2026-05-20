@@ -39,19 +39,19 @@ div.ttt-row {
   max-width:500px;
 }
 div.ttt-bottom {
-  border-bottom:1px dashed white;
+  border-bottom:5px dashed white;
   border-radius:3px;
 }
 div.ttt-top {
-  border-top:1px dashed white;
+  border-top:5px dashed white;
   border-radius:3px;
 }
 div.ttt-left {
-  border-left:1px dashed white;
+  border-left:5px dashed white;
   border-radius:3px;
 }
 div.ttt-right {
-  border-right:1px dashed white;
+  border-right:5px dashed white;
   border-radius:3px;
 } 
 #end-of-game {
@@ -94,4 +94,41 @@ button {
   font-size:2rem;
   padding:0px;
   margin:0px;
+}
+#scoreboard {
+  position:fixed;
+  top:350px;
+  left:10px;
+  right:10px;
+  z-index:-1;
+  padding:15px;
+  font-family:Kaushan Script, Cursive;
+  text-align:center;
+}
+.p {
+  text-decoration: underline white 1px;
+}
+#x-score {
+  float: left;
+  width: 10%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px;
+  min-height: 100px;
+  border:3px dashed white;
+  border-radius:3px;
+}
+.scores {
+  font-family:Permanent Marker, Cursive;
+}
+#o-score {
+  float: right;
+  width: 10%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5px;
+  min-height: 100px;
+  border:3px dashed white;
+  border-radius:3px;
+}
+#heady-boi {
+  text-decoration: underline white 3px;
 }
