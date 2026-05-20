@@ -12,8 +12,10 @@
   </head>
   <body><img id="bg-img" src="https://images.pexels.com/photos/3711238/pexels-photo-3711238.jpeg?_gl=1*8s97lp*_ga*OTAwMDg2Nzg1LjE3NzkyMTMzNTI.*_ga_8JE65Q40S6*czE3NzkyMTMzNTEkbzEkZzAkdDE3NzkyMTMzNTEkajYwJGwwJGgw" width="100%" height="100%">
     <script src="https://yaeanderson.github.io/web-dev/globalheader.js"></script>
+    <div id="heady-boi">
     <h1>Ticity-Tacity-Toeity</h1>
     <p id="turn-track">X's Turn</p>
+    </div>
     <p id="score"></p>
     <div class="ttt-row">
       <div class="ttt-square ttt-top ttt-left"></div>
@@ -36,6 +38,16 @@
         <button onclick="resetGame(event)">Play Again</buttom>
       </div>
     </div>
-    <script src="https://yaeanderson.github.io/web-dev/wdsub/tic-tac-toe.js"></script>
+    <div id="scoreboard">
+      <div id="x-score">
+        <p class="p">Player X:</p>
+        <p class="scores">0</p>
+      </div>
+      <div id="o-score">
+        <p class="p">Player O:</p>
+        <p class="scores">0</p>
+      </div>
+    </div>
+  <script src="https://yaeanderson.github.io/web-dev/wdsub/tic-tac-toe.js"></script>
   </body>
 </html>
