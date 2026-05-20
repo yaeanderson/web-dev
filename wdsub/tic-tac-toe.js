@@ -43,9 +43,6 @@ function checkWinner() {
   //if game is over, display end-of-game div
   if (isGameOver) showWinner();
   return isGameOver;
-  //x or o score ++
-  if (currentPlayer == "X") xScore++;
-  else if (currentPlater == "O") oScore++;
 }
 function checkDraw() {
   let isDraw = true;
@@ -57,6 +54,7 @@ function checkDraw() {
 function showWinner() {
   EOGDiv.style.display = "block";
   winText.innerText = "Player " + currentPlayer + " Wins!";
+  incrementScore();
 }
 function showDraw() {
   EOGDiv.style.display = "block";
@@ -66,6 +64,12 @@ function changePlayer() {
   currentPlayer = ((currentPlayer == "X") ? "O" : "X");
   turnTrack.innerText = currentPlayer + "'s Turn";
 } 
+function incrementScore() {
+  let boardToInc;
+  if (currentPlayer == "X") boardToInc = document.querySelectorAll("#x-score p")[1];
+  else boardToInc = document.querySelectorAll("#o-score p")[1];
+  boardToInc.innerText = Number(boardToInc.innerText) + 1;
+}
 function resetGame(event) {
   //Hide EOG Div
   EOGDiv.style.display = "none";
