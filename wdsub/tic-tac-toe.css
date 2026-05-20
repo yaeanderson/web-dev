@@ -1,0 +1,97 @@
+body {
+  margin:0px;
+  font-family:Kaushan Script, cursive;
+  color:white;
+  background-color:black;
+  text-shadow: 3px 3px black;
+}
+#bg-img {
+  position:fixed;
+  top:0px; 
+  bottom:0px;
+  z-index:-1000000000000000000000000000000000000000000000000000000;
+  height:100vh;
+  width:100vw;
+  color:#f00;
+  opacity:.8;
+  margin:0px;
+  padding:0px;
+}
+div.ttt-square {
+  border:2px solid white;
+  height:100px;
+  width:30%;
+  flex-grow:1;
+  padding:0px;
+  font-size:100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(0,0,0,.6);
+  font-family:Permanent Marker,Kaushan Script, Cursive;
+}
+div.ttt-row {
+  display:flex;
+  flex:1 1 auto;
+  justify-content:space-evenly;
+  margin:auto;
+  width:75%;
+  max-width:500px;
+}
+div.ttt-bottom {
+  border-bottom:1px dashed white;
+  border-radius:3px;
+}
+div.ttt-top {
+  border-top:1px dashed white;
+  border-radius:3px;
+}
+div.ttt-left {
+  border-left:1px dashed white;
+  border-radius:3px;
+}
+div.ttt-right {
+  border-right:1px dashed white;
+  border-radius:3px;
+} 
+#end-of-game {
+  background-color:rgba(2, 6, 111, .8);
+  position:fixed;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  z-index:10000000000000000000000000000000000000000000;
+  display:none;
+  color:black;
+  text-shadow:none;
+}
+#end-of-game div {
+  background-color:white;
+  width:50%;
+  max-width:400px; 
+  margin: 150px auto;
+  padding:10px;
+  text-align:center;
+  font-size:45px;
+  border-radius:15px;
+  font-family:Permanent Marker,Kaushan Script, Cursive;
+}
+h1 {
+  text-align:center;
+}
+button {
+  font-family:Kaushan Script, cursive;
+  color:white;
+  background-color:black;
+  border-color:black;
+  font-size:15px;
+  opacity:1;
+}
+#turn-track {
+  text-align:center;
+  font-family:Permanent Marker,Kaushan Script, Cursive;
+  font-size:2rem;
+  padding:0px;
+  margin:0px;
+}
