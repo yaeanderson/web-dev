@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guess the Word!</title>
+
+<style>
+body {
+  background: #121213;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.topArea {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.letterBox {
+  width: 180px;
+  background: #1d1d1f;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #333;
+}
+
+.letterBox h3 {
+  margin-top: 0;
+  color: #00ffcc;
+}
+
+.letters {
+  font-size: 28px;
+  line-height: 1.8;
+  letter-spacing: 5px;
+}
+
+#enemyBox {
+  width: 300px;
+}
+
+#enemyName {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(5, 70px);
+  gap: 8px;
+  justify-content: center;
+  margin: 25px auto 10px auto;
+}
+
+#controls {
+  margin-top: -15px;
+}
+
+.tile {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.correct { background: #538d4e; border-color: #538d4e; }
+.present { background: #b59f3b; border-color: #b59f3b; }
+.absent { background: #3a3a3c; border-color: #3a3a3c; }
+
+input {
+  padding: 14px;
+  font-size: 20px;
+  width: 240px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  padding: 14px 18px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: #538d4e;
+  color: white;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 26px;
+  min-height: 40px;
+}
+  #guessInput {
+    display:inline;
+  }
+  #guessBtn {
+    display:inline;
+  }
+  #restartBtn {
+    display:inline;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>Guess the word</h1>
+
+<div class="topArea">
+
+  <div class="letterBox">
+    <h3>Vowels</h3>
+    <div class="letters">A E I O U</div>
+  </div>
+
+  <div id="enemyBox">
+    <div id="enemyName">👾 Boss Word</div>
+  </div>
+
+  <div class="letterBox">
+    <h3>Consonants</h3>
+    <div class="letters">B C D F G H J K L M N P Q R S T V W X Y Z</div>
+  </div>
+
+</div>
+
+<div id="game"></div>
+
+<div id="controls">
+  <input type="text" id="guessInput" maxlength="5" placeholder="5-letter word"/>
+  <button id="guessBtn">Attack</button>
+  <button id="restartBtn">New Word</button>
+</div>
+
+<p id="message"></p>
+
+<script>
+const words = [
+  "apple","grape","chair","stone","plant",
+  "bread","light","tiger","beach","smile",
+  "water","flame","ghost","sword","train",
+  "cloud","dream","earth","pizza","robot"
+];
+
+const enemyIcons = ["👾","🐉","💀","🧟","👹","🤖"];
+
+const game = document.getElementById("game");
+const input = document.getElementById("guessInput");
+const guessBtn = document.getElementById("guessBtn");
+const restartBtn = document.getElementById("restartBtn");
+const message = document.getElementById("message");
+
+const enemyName = document.getElementById("enemyName");
+
+let secretWord = "";
+let attempts = 0;
+let maxAttempts = 5;
+
+function startGame() {
+
+  game.innerHTML = "";
+  message.textContent = "";
+  attempts = 0;
+
+  secretWord = words[Math.floor(Math.random() * words.length)];
+
+  const icon = enemyIcons[Math.floor(Math.random() * enemyIcons.length)];
+  enemyName.textContent = icon + " Boss Word";
+
+  input.disabled = false;
+  guessBtn.disabled = false;
+
+  input.value = "";
+
+  console.log("Secret:", secretWord);
+}
+
+function createTile(letter, className) {
+  const tile = document.createElement("div");
+  tile.classList.add("tile", className);
+  tile.textContent = letter;
+  game.appendChild(tile);
+}
+
+function checkGuess() {
+
+  const guess = input.value.toLowerCase();
+
+  if (guess.length !== 5) {
+    message.textContent = "Enter a 5-letter word!";
+    return;
+  }
+
+  if (attempts >= maxAttempts) return;
+
+  attempts++;
+
+  const secretLetters = secretWord.split("");
+  const guessLetters = guess.split("");
+
+  const result = Array(5).fill("absent");
+
+  for (let i = 0; i < 5; i++) {
+    if (guessLetters[i] === secretLetters[i]) {
+      result[i] = "correct";
+      secretLetters[i] = null;
+    }
+  }
+
+  for (let i = 0; i < 5; i++) {
+    if (result[i] === "correct") continue;
+
+    const idx = secretLetters.indexOf(guessLetters[i]);
+
+    if (idx !== -1) {
+      result[i] = "present";
+      secretLetters[idx] = null;
+    }
+  }
+
+  for (let i = 0; i < 5; i++) {
+    createTile(guessLetters[i], result[i]);
+  }
+
+  if (guess === secretWord) {
+    message.textContent = "⚔️ YOU DEFEATED THE WORD!";
+    input.disabled = true;
+    guessBtn.disabled = true;
+    return;
+  }
+
+  if (attempts >= maxAttempts) {
+    message.textContent =
+      "💀 Out of guesses! The word was: " +
+      secretWord.toUpperCase();
+  }
+
+  input.value = "";
+}
+
+guessBtn.addEventListener("click", checkGuess);
+
+input.addEventListener("keydown", e => {
+  if (e.key === "Enter") checkGuess();
+});
+
+restartBtn.addEventListener("click", startGame);
+
+startGame();
+</script>
+
+</body>
+</html>
