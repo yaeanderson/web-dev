@@ -1,0 +1,83 @@
+body {
+  margin:0px;
+  color:white;
+  background-color:black;
+  font-family:Rubik Doodle Shadow, cursive;
+}
+#content {
+  text-align:center;
+  align-content:center;
+  justify-content:center;
+}
+h1 {
+  border:solid white 2px;
+  background-color:rgba(0,0,0,.5);
+  padding:5px;
+  padding-left:10px;
+  padding-right:10px;
+  display:inline;
+  border-radius:15px;
+}
+#bg-img {
+  position:fixed;
+  top:0px; 
+  bottom:0px;
+  z-index:-1000000000000000000000000000000000000000000000000000000;
+  height:100vh;
+  width:100vw;
+  color:#f00;
+  opacity:.7;
+  margin:0px;
+  padding:0px;
+}
+#matrix {
+  width:80%;
+  margin:auto;
+  font-weight:bolder;
+}
+.matrix-row {
+  display:flex;
+  justify-content:space-evenly;
+  height:50px;
+  font-family:Rubik Vinyl, cursive;
+  font-weight:bolder;
+  background-color:rgba(0,0,0,.5);
+}
+.matrix-row > div {
+  flex:1 1 0;
+  border: solid white 2px;
+  text-align:center;
+  align-content:center;
+}
+#matrix input {
+  width:40px;
+  background-color:rgba(0,0,0,.5);
+  color:white;
+  border-radius:5px;
+  margin:5px;
+  font-family:Rubik Vinyl, cursive;
+  font-weight:bolder;
+  text-align:center;
+  justify-content:center;
+}
+.random-img {
+ width:100%;
+ height:100%;
+ object-fit:contain;
+ display:inline;
+}
+button {
+  background-color:rgba(0,0,0,.5);
+  color:white;
+  border-radius:5px;
+  margin:5px;
+  font-family:Rubik Doodle Shadow, cursive;
+  font-weight:bolder;
+}
+/*remove prev and make this*/
+.ne, .ne input {
+  background-color:light-green;
+}
+.eliminated, .eliminated input {
+  background-color: grey;
+}
